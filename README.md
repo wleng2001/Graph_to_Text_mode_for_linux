@@ -1,4 +1,7 @@
 # Graph_to_Text_mode_for_linux
+<!-- markdownlint-configure-file { "MD004": { "style": "consistent" } } -->
+<!-- markdownlint-disable MD033 -->
+
 ## Description
 
 The program automatically change your linux mode from graphical to text (tty) and vice versa.
