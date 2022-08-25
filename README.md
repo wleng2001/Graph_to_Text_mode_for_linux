@@ -10,6 +10,6 @@ It's simply program, which is written in bash and python.
 ## Instalation
 
 If you want use the program you must check that you have python in version 3. You can do it write the command in terminal:
-### 'python3 --version'
+### `python3 --version`
 to be continued 
 -----
