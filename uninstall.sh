@@ -1,0 +1,2 @@
+echo 'Uninstalling GtT'
+
