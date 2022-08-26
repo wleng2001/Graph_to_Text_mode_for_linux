@@ -14,6 +14,6 @@ It's simply program, which is written in bash and python. It copies your grub fi
 If you want use the program you must check that you have python in version 3. You can do it write the command in terminal:
 ### `python3 --version` 
 
-to be continued
+It's my first repository on github and I learn about it.
 
 -----
