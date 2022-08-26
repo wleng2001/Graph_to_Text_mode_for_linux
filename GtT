@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #the place is modify by installer
-help="./help.txt"
+#help=
 
 if [ "-h" = $1 ];
 then 

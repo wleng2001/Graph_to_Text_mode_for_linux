@@ -2,11 +2,14 @@
 # Zamiana GRUB_CMDLINE_LINUX="" na GRUB_CMDLINE_LINUX="text" uruchomi linux w trybie tekstowym
 #  Odkomentowanie: GRUB_TERMINAL=console wyłączy graficzny terminal przez co stanie się on czarno-biały
 
+import os
+
 text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"']
 changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"']
 file_name="grub.backup"
 text_file_name="grub.backuptext"
 graph_file_name="grub.backupgraph"
+program_file_name="GtT"
 text_mode=True
 text_for_user="#The file was edited by GtT\n#You can read more on my github: \n"
 
@@ -56,7 +59,7 @@ def copy_file(table,file_name, head=""):
 #-----------------------------------------------------------------------------------------------------
 print("Checking actually mode")
 grub_text=read_file(file_name)
-if find_text_in_list(changed_text[2], grub_text):
+if find_text_in_list(changed_text[1], grub_text):
 	print("You're in graphical mode.")
 	text_mode=False
 else:
@@ -69,11 +72,14 @@ if text_mode==False:
 	edit_more(grub_text, text_file_name, text_to_change, changed_text)
 	print("Creating graph file.")
 	copy_file(grub_text,graph_file_name, text_for_user)
-		
+
 if text_mode==True:
 	print("Creating graph file.")
 	edit_more(grub_text, graph_file_name, changed_text, text_to_change)
 	print("Creating text file.")
 	copy_file(grub_text,text_file_name, text_for_user)
-	
+
+GtT_text=edit_file(read_file(program_file_name),"#help=","help="+os.getcwd()+"/GtT") #add iformation of help.txt  localization
+copy_file(GtT_text,program_file_name)
+
 print(f"End editing {file_name} file")
