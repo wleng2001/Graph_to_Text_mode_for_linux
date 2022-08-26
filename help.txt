@@ -1,0 +1,13 @@
+GtT (Graphic to Text for linux) is program, which chceck mode of user interface and can change it.
+
+	-h show the information
+
+	-d set default settings of user interface
+	
+	-s show what user interface is set
+	
+	-g set graphic mode
+
+	-t set text mode (tty)
+
+You can learn more on github repository Graphic_to_Text_for_linux

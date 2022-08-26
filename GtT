@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#the place is modify by installer
+help="./help.txt"
+
+if [ "-h" = $1 ];
+then 
+	cat $help;
+fi
