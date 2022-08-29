@@ -1,9 +1,52 @@
 #!/bin/bash
 
 #the place is modify by installer
-#help=
+#loc=
+
+#-----------------------------------------------------------------------------------------------------
+
+function change_mode()
+{
+	input=$1
+	parameter=$2
+	info=$3
+	file_name=$4
+	if [ $parameter = $input ];
+	then
+		echo $info
+		sudo cp /etc/default/$file_name /etc/default/grub
+		sudo update-grub
+		echo $info > mode.txt
+		echo -n "You must restart computer to aplly changes. Do you want do it now?(Y/n): "
+		read answer
+		if test $answer == "Y"
+			then shutdown -r now
+		fi
+	fi
+}
+
+#-----------------------------------------------------------------------------------------------------
 
 if [ "-h" = $1 ];
-then 
-	cat $help;
+then
+	cat $loc'help.txt';
 fi
+
+if [ "-s" = $1 ];
+then
+	cat $loc'mode.txt';
+fi
+
+if [ "-u" = $1 ];
+then
+	echo "Uninstalling GtT (Graphic to Text mode for linux)"
+	change_mode $1 "-d" "Enable default mode" "grub.backup"
+	bash $loc'uninstall.sh'
+fi
+
+change_mode $1 "-d" "Enable default mode" "grub.backup"
+
+change_mode $1 "-g" "Enable graphic mode" "grub.backupgraph"
+
+change_mode $1 "-t" "Enable text mode" "grub.backuptext"
+

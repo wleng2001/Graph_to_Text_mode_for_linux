@@ -11,7 +11,7 @@ text_file_name="grub.backuptext"
 graph_file_name="grub.backupgraph"
 program_file_name="GtT"
 text_mode=True
-text_for_user="#The file was edited by GtT\n#You can read more on my github: \n"
+text_for_user="#The file was edited by GtT\n#You can read more on my github: https://github.com/wleng2001/Graph_to_Text_mode_for_linux \n"
 
 def read_file(file_name):
 	file=open(file_name)
@@ -26,13 +26,13 @@ def find_text_in_list(search_text, analyze_text):
 		if search_text in i:
 			return True
 	return False
-	
+
 def replace_text(text, search_text, new_text):
 	if search_text in text:
 		text=text.replace(search_text, new_text)
 		return text
 	else: return text
-		
+
 def edit_file(table, search_text, replaced_text):
 	new_table=[]
 	for i in table:
@@ -49,7 +49,7 @@ def edit_more(table, new_file_name, table_to_change, table_changed,):
 	for i in new_table:
 		new_file.write(i)
 	new_file.close()
-	
+
 def copy_file(table,file_name, head=""):
         file=open(file_name,'w')
         file.write(head)
@@ -79,7 +79,7 @@ if text_mode==True:
 	print("Creating text file.")
 	copy_file(grub_text,text_file_name, text_for_user)
 
-GtT_text=edit_file(read_file(program_file_name),"#help=","help="+os.getcwd()+"/GtT") #add iformation of help.txt  localization
+GtT_text=edit_file(read_file(program_file_name),"#loc=",'loc="'+os.getcwd()+'/"') #add iformation of help.txt  localization
 copy_file(GtT_text,program_file_name)
 
 print(f"End editing {file_name} file")

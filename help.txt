@@ -9,5 +9,7 @@ GtT (Graphic to Text for linux) is program, which chceck mode of user interface 
 	-g set graphic mode
 
 	-t set text mode (tty)
+	
+	-u uninstall GtT
 
 You can learn more on github repository Graphic_to_Text_for_linux
