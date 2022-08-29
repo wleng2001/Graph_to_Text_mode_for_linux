@@ -11,9 +11,18 @@ It's simply program, which is written in bash and python. It copies your grub fi
 
 ## Instalation
 
-If you want use the program you must check that you have python in version 3. You can do it write the command in terminal:
+If you want use the program you must check that you have python in version 3. You can do it by write the command in terminal:
 ### `python3 --version` 
-
-It's my first repository on github and I learn about it.
+If you get infomration similary to this you can install GtT
+### `Python 3.10.4`
+Next paste the command to the terminal: 
+### `git clone https://github.com/wleng2001/Graph_to_Text_mode_for_linux.git ./GtT`
+Write the text in the terminal:
+### `cd GtT`
+Run installer:
+### `bash install.sh`
+Congratulation! You have installed GtT!
 
 -----
+
+It's my first repository on github and I learn about it.
