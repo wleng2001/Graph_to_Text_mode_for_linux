@@ -82,4 +82,6 @@ if text_mode==True:
 GtT_text=edit_file(read_file(program_file_name),"#loc=",'loc="'+os.getcwd()+'/"') #add iformation of help.txt  localization
 copy_file(GtT_text,program_file_name)
 
+uninstall_text=edit_file(read_file("uninstall.sh"),"#loc=",'loc="'+os.getcwd()+'/"')
+copy_file(uninstall_text,"uninstall.sh")
 print(f"End editing {file_name} file")
