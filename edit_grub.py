@@ -59,7 +59,7 @@ def copy_file(table,file_name, head=""):
 #-----------------------------------------------------------------------------------------------------
 print("Checking actually mode")
 grub_text=read_file(file_name)
-if find_text_in_list(changed_text[1], grub_text):
+if find_text_in_list(text_to_change[1], grub_text):
 	print("You're in graphical mode.")
 	text_mode=False
 else:
