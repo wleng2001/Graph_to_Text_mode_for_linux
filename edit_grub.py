@@ -1,17 +1,17 @@
-# Zakomentowanie tego tekstu: GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash” wyłącza ekran startowy i końcowy
+# Zakomentowanie tego tekstu: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash" wyłącza ekran startowy i końcowy
 # Zamiana GRUB_CMDLINE_LINUX="" na GRUB_CMDLINE_LINUX="text" uruchomi linux w trybie tekstowym
 #  Odkomentowanie: GRUB_TERMINAL=console wyłączy graficzny terminal przez co stanie się on czarno-biały
 
 import os
 
-text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"']
-changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"']
+text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"','GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
+changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
 file_name="grub.backup"
 text_file_name="grub.backuptext"
 graph_file_name="grub.backupgraph"
 program_file_name="GtT"
 text_mode=True
-text_for_user="#The file was edited by GtT\n#You can read more on my github: https://github.com/wleng2001/Graph_to_Text_mode_for_linux \n"
+text_for_user="#The file was edited by GtT\n#You can read more on my github: https://github.com/wleng2001/Graph_to_Text_mode_for_linux\n"
 
 def read_file(file_name):
 	file=open(file_name)
@@ -84,4 +84,5 @@ copy_file(GtT_text,program_file_name)
 
 uninstall_text=edit_file(read_file("uninstall.sh"),"#loc=",'loc="'+os.getcwd()+'/"')
 copy_file(uninstall_text,"uninstall.sh")
+
 print(f"End editing {file_name} file")
