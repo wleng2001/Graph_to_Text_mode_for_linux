@@ -4,8 +4,8 @@
 
 import os
 
-text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"','GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
-changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
+text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"','#GRUB_TERMINAL=console','GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
+changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"','GRUB_TERMINAL=console','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
 file_name="grub.backup"
 text_file_name="grub.backuptext"
 graph_file_name="grub.backupgraph"
