@@ -29,20 +29,20 @@ Congratulation! You have installed GtT!
 ## Usage
 
 If you forget how to use program you can write the command in terminal to read about it.
-### 'GtT -h'
+### `GtT -h`
 After typing the command you should see the information: 
 <a href="help.txt"> help</a>
 If you want to change mode to text you should write the text in terminal.
-### 'sudo GtT -t'
+### `sudo GtT -t`
 The program ask you for password to your linux account, because it edit system file. After the operating is completed program ask you for restart computer.
 If you want to change mode to graphic you should write the text in terminal.
-### 'sudo GtT -g'
+### `sudo GtT -g`
 The program ask you for password to your linux account, because it edit system file. After the operating is completed program ask you for restart computer.
 If you want to change mode to default you should write the text in terminal. It command show always, because program doesn't advanced yet.
-### 'sudo GtT -d'
+### `sudo GtT -d`
 The program ask you for password to your linux account, because it edit system file. After the operating is completed program ask you for restart computer.
 If you want to uninstall program you should write the text in terminal.
-### 'sudo GtT -u'
+### `sudo GtT -u`
 The program ask you for password to your linux account, because it edit system file. After the operating is completed program ask you for restart computer.
 
 -----
