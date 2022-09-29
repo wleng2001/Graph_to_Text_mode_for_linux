@@ -12,4 +12,4 @@ GtT (Graphic to Text for linux) is program, which chceck mode of user interface 
 	
 	-u uninstall GtT
 
-You can learn more on github repository Graphic_to_Text_for_linux
+You can learn more on github repository Graph_to_Text_for_linux (https://github.com/wleng2001/Graph_to_Text_mode_for_linux)
