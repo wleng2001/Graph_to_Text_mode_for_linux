@@ -21,7 +21,7 @@ Write the text in the terminal:
 ### `cd GtT`
 Run installer:
 ### `sudo bash install.sh`
-Installer ask you for password to your linux account, because it edit system file.\n
+Installer ask you for password to your linux account, because it edit system file.
 Congratulation! You have installed GtT!
 
 -----
