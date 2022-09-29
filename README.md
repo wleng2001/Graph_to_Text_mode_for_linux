@@ -21,7 +21,7 @@ Write the text in the terminal:
 ### `cd GtT`
 Run installer:
 ### `sudo bash install.sh`
-Installer ask you for password to your linux account, because it edit system file.
+Installer ask you for password to your linux account, because it edit system file.\n
 Congratulation! You have installed GtT!
 
 -----
@@ -46,4 +46,3 @@ If you want to uninstall program you should write the text in terminal.
 The program ask you for password to your linux account, because it edit system file. After the operating is completed program ask you for restart computer.
 
 -----
-It's my first repository on github and I learn about it.
