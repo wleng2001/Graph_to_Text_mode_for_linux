@@ -16,10 +16,26 @@ function change_mode()
 		echo $info
 		sudo cp /etc/default/$file_name /etc/default/grub
 		sudo update-grub
-		echo $info > mode.txt
+
+		if [ $parameter == "-d" ];
+		then
+			sudo systemctl get-default
+		fi
+
+		if [ $parameter == "-t" ];
+		then
+			sudo systemctl set-default multi-user.target
+		fi
+
+		if [ $parameter == "-g" ];
+		then
+			 sudo systemctl set-default graphical.target
+		fi
+
+		echo $info > $loc/mode.txt
 		echo -n "You must restart computer to aplly changes. Do you want do it now?(Y/n): "
 		read answer
-		if test $answer == "Y"
+		if [ $answer == "Y" ] || [ $answer == "y" ];
 			then shutdown -r now
 		fi
 	fi

@@ -6,6 +6,7 @@ import os
 
 text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX_DEFAULT="quiet"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"']
 changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"']
+
 file_name="grub.backup"
 text_file_name="grub.backuptext"
 graph_file_name="grub.backupgraph"

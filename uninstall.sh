@@ -9,7 +9,7 @@ sudo update-grub
 
 sudo rm /etc/default/grub.backup
 sudo rm /bin/GtT
-sudo rm $loc
+sudo rm $loc -r
 
 echo -n "You must restart computer to aplly changes. Do you want do it now?(Y/n): "
 read answer
