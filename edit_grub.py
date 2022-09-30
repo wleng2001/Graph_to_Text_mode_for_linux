@@ -4,8 +4,8 @@
 
 import os
 
-text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX_DEFAULT="quiet"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"']
-changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"']
+text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"','#GRUB_TERMINAL=console','GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
+changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"','GRUB_TERMINAL=console','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
 file_name="grub.backup"
 text_file_name="grub.backuptext"
 graph_file_name="grub.backupgraph"
@@ -40,7 +40,7 @@ def edit_file(table, search_text, replaced_text):
 		new_table.append(replace_text(i,search_text,replaced_text))
 	return new_table
 
-def edit_more(table, new_file_name, table_to_change, table_changed,):
+def edit_more(table, new_file_name, table_to_change, table_changed):
 	new_file=open(new_file_name,'w')
 	new_file.write(text_for_user)
 	new_table=table
@@ -64,9 +64,10 @@ default_info=open(default_info_name, 'w')
 
 #add analize default grub function
 for i in changed_text:
-    if i.startswith("#")==False:
-        i="#"+i
-    find_text_in_list(i, grub_text)
+	if i.startswith("#")==False:
+		i="#"+i
+	find_text_in_list(i, grub_text)
+default_info.close()
 
 if find_text_in_list(text_to_change[1], grub_text):
 	print("You're in graphical mode.")
