@@ -4,12 +4,13 @@
 
 import os
 
-text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"','GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
-changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"']
+text_to_change=['GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','GRUB_CMDLINE_LINUX_DEFAULT="quiet"','GRUB_CMDLINE_LINUX=""','#GRUB_TERMINAL="console"']
+changed_text=['#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"','#GRUB_CMDLINE_LINUX_DEFAULT="quiet"','GRUB_CMDLINE_LINUX="text"','GRUB_TERMINAL="console"']
 file_name="grub.backup"
 text_file_name="grub.backuptext"
 graph_file_name="grub.backupgraph"
 program_file_name="GtT"
+default_info_name="default.txt"
 text_mode=True
 text_for_user="#The file was edited by GtT\n#You can read more on my github: https://github.com/wleng2001/Graph_to_Text_mode_for_linux\n"
 
@@ -59,6 +60,14 @@ def copy_file(table,file_name, head=""):
 #-----------------------------------------------------------------------------------------------------
 print("Checking actually mode")
 grub_text=read_file(file_name)
+default_info=open(default_info_name, 'w')
+
+#add analize default grub function
+for i in changed_text:
+    if !i.startswith("#")==False:
+        i="#"+i
+    find_text_in_list(i, grub_text)
+ 
 if find_text_in_list(text_to_change[1], grub_text):
 	print("You're in graphical mode.")
 	text_mode=False
